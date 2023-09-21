@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { StyleSheet, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 export const screens = {
@@ -9,11 +10,31 @@ export const screens = {
   Book: 'Book',
   ContactStack: 'ContactStack',
   Contact: 'Contact',
+  SiddhiStack: 'SiddhiStack', 
+  SiddhiAssociates: 'SiddhiAssociates',
+  RiddhiStack: 'RiddhiStack', 
+  RiddhiLady: 'RiddhiLady',
+  MvvStack: 'MvvStack', 
+  MvvManch: 'MvvManch',
   MyRewardsStack: 'MyRewardsStack',
   MyRewards: 'MyRewards',
   LocationsStack: 'LocationsStack',
   Locations: 'Locations',
+  EducationQualification: 'EducationQualification',
+  ProfessionalProfile: 'ProfessionalProfile',
+  SocialProfile: 'SocialProfile',
+  KnowTheMan: 'KnowTheMan',
+  ContactUs: 'ContactUs',
+  Mission2047: 'Mission2047',
+  SendFeedback: 'SendFeedback'
 }
+
+const styles = StyleSheet.create({
+  wh24: {
+    width: 24,
+    height: 24
+  }
+})
 
 export const routes = [
   {
@@ -22,8 +43,7 @@ export const routes = [
     title: 'Home',
     showInTab: false,
     showInDrawer: false,
-    icon: (focused) =>
-      <Icon name="home" size={30} color={focused ? '#551E18' : '#000'} />,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/homeIcon/homeIcon.png')} />,
   },
   {
     name: screens.HomeStack,
@@ -31,8 +51,7 @@ export const routes = [
     title: 'Home',
     showInTab: true,
     showInDrawer: true,
-    icon: (focused) =>
-      <Icon name="home" size={30} color={focused ? '#551E18' : '#000'} />,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/homeIcon/homeIcon.png')} />,
   },
   {
     name: screens.Home,
@@ -50,25 +69,82 @@ export const routes = [
     title: 'Book Room',
     showInTab: true,
     showInDrawer: false,
-    icon: (focused) =>
-      <Icon name="bed" size={30} color={focused ? '#551E18' : '#000'} />,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/siddiAssoIcon/siddiAssoIcon.png')} />,
   },
-
   {
     name: screens.Book,
     focusedRoute: screens.BookStack,
     title: 'Book Room',
     showInTab: true,
     showInDrawer: false,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/siddiAssoIcon/siddiAssoIcon.png')} />,
+  },
+
+  {
+    name: screens.SiddhiStack,
+    focusedRoute: screens.SiddhiStack,
+    title: 'SIDDHI ASSOCIATES',
+    showInTab: true,
+    showInDrawer: true,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/siddiAssoIcon/siddiAssoIcon.png')} />,
+  },
+  {
+    name: screens.SiddhiAssociates,
+    focusedRoute: screens.SiddhiStack,
+    title: 'SIDDHI ASSOCIATES',
+    showInTab: false,
+    showInDrawer: false,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/siddiAssoIcon/siddiAssoIcon.png')} />,
+  },
+
+  {
+    name: screens.RiddhiStack,
+    focusedRoute: screens.RiddhiStack,
+    title: 'RIDDHI’S LADY WING',
+    showInTab: true,
+    showInDrawer: true,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/riddhiIcon/riddhiIcon.png')} />,
+  },
+  {
+    name: screens.RiddhiLady,
+    focusedRoute: screens.RiddhiStack,
+    title: 'RIDDHI’S LADY WING ',
+    showInTab: false,
+    showInDrawer: false,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/riddhiIcon/riddhiIcon.png')} />,
+  },
+
+  {
+    name: screens.MvvStack,
+    focusedRoute: screens.MvvStack,
+    title: 'MADHYAMVARGIYA VIKAS MANCH ',
+    showInTab: true,
+    showInDrawer: true,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/mvvIcon/mvvIcon.png')} />,
+  },
+  {
+    name: screens.MvvManch,
+    focusedRoute: screens.MvvStack,
+    title: 'MADHYAMVARGIYA VIKAS MANCH ',
+    showInTab: false,
+    showInDrawer: false,
+    icon: (focused) => <Image style={styles.wh24} source={require('../assets/mvvIcon/mvvIcon.png')} />,
+  },
+  {
+    name: screens.KnowTheMan,
+    focusedRoute: screens.KnowTheMan,
+    title: 'KNOW THE MAN',
+    showInTab: false,
+    showInDrawer: true,
     icon: (focused) =>
-      <Icon name="bed" size={30} color={focused ? '#551E18' : '#000'} />,
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
 
   {
     name: screens.ContactStack,
     focusedRoute: screens.ContactStack,
     title: 'Contact Us',
-    showInTab: true,
+    showInTab: false,
     showInDrawer: false,
     icon: (focused) =>
       <Icon name="phone" size={30} color={focused ? '#551E18' : '#000'} />,
@@ -93,6 +169,24 @@ export const routes = [
       <Icon name="star" size={30} color={focused ? '#551E18' : '#000'} />,
   },
   {
+    name: screens.ContactUs,
+    focusedRoute: screens.ContactUs,
+    title: 'CONTACT US',
+    showInTab: false,
+    showInDrawer: true,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
+  {
+    name: screens.SendFeedback,
+    focusedRoute: screens.SendFeedback,
+    title: 'Feedback',
+    showInTab: false,
+    showInDrawer: true,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
+  {
     name: screens.MyRewards,
     focusedRoute: screens.MyRewardsStack,
     title: 'My Rewards',
@@ -107,7 +201,7 @@ export const routes = [
     focusedRoute: screens.LocationsStack,
     title: 'Locations',
     showInTab: false,
-    showInDrawer: true,
+    showInDrawer: false,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
@@ -117,6 +211,15 @@ export const routes = [
     title: 'Locations',
     showInTab: false,
     showInDrawer: false,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
+  {
+    name: screens.Mission2047,
+    focusedRoute: screens.Mission2047,
+    title: 'MISSION 2047',
+    showInTab: false,
+    showInDrawer: true,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },

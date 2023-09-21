@@ -3,6 +3,7 @@ import { View, Text } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { screens } from '../RouteItems'
+import SplashScreen from '../../screens/SplashScreen' 
 
 const Stack = createStackNavigator()
 
@@ -17,7 +18,7 @@ const BookStackNavigator = () => {
     <Stack.Navigator screenOptions={{
       headerShown: false,
     }}>
-      <Stack.Screen name={screens.Book} component={Book} />
+      <Stack.Screen name={screens.Book} component={SplashScreen} />
     </Stack.Navigator>
   )
 }
