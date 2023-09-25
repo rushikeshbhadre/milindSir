@@ -14,7 +14,7 @@ import { WebView } from 'react-native-webview';
 const mCards = [
   {
     id: 1,
-    img: require('../../assets/vimaKranti.png'),
+    img: require('../../assets/vimaKrantiSmall.png'),
     cardHeader: 'Mission 2047',
     subCardHeader: `Every Indian Must Be Insured Be a Part to Develop Our Nation`,
     btnText: "Click here to participate"
@@ -60,7 +60,7 @@ const Stack = createStackNavigator();
 const Home = ({navigation}) => (
   <ScrollView ref={ref => this.scrollViewRef = ref}>
     <View style={{ flex: 1, justifyContent: 'flex-start', paddingTop: 22, paddingLeft: 24, paddingRight: 24, paddingBottom: 22, backgroundColor: '#FBEAFF', }}>
-      <MCarousel data={mCards} navigation={navigation} />
+      <MCarousel navigation={navigation} />
       {/* {mCards.map((mCard) => <MCard {...mCard} />)} */}
       {/* <View style={{width: "100%", height: 1500,}}>
         <WebView

@@ -89,9 +89,9 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('my-release-key.keystore')
+            storeFile file('milind-release-key.keystore')
             storePassword '123456'
-            keyAlias 'my-key-alias'
+            keyAlias 'key-milind-sir'
             keyPassword '123456'
         }
     }
