@@ -26,7 +26,9 @@ export const screens = {
   KnowTheMan: 'KnowTheMan',
   ContactUs: 'ContactUs',
   Mission2047: 'Mission2047',
-  SendFeedback: 'SendFeedback'
+  SendFeedback: 'SendFeedback',
+  LoginPage: 'LoginPage',
+  ProfilePage: 'ProfilePage',
 }
 
 const styles = StyleSheet.create({
@@ -181,6 +183,24 @@ export const routes = [
     name: screens.SendFeedback,
     focusedRoute: screens.SendFeedback,
     title: 'Feedback',
+    showInTab: false,
+    showInDrawer: true,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
+  {
+    name: screens.LoginPage,
+    focusedRoute: screens.LoginPage,
+    title: 'Login page',
+    showInTab: false,
+    showInDrawer: true,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
+  {
+    name: screens.ProfilePage,
+    focusedRoute: screens.ProfilePage,
+    title: 'Profile',
     showInTab: false,
     showInDrawer: true,
     icon: (focused) =>

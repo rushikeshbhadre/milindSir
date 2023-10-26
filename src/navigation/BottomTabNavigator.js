@@ -11,6 +11,8 @@ import KnowTheMan from '../screens/KnowTheMan'
 import ContactUs from '../screens/ContactUs'
 import Mission2047 from '../screens/Misson2047'
 import SendFeedback from '../screens/SendFeedback'
+import LoginPage from '../screens/LoginPage'
+import ProfilePage from '../screens/ProfilePage'
 import { routes, screens } from './RouteItems'
 import SiddhiAssociates from '../screens/SiddhiAssociates'
 import RiddhiLady from '../screens/RiddhiLady'
@@ -56,6 +58,8 @@ const BottomTabNavigator = () => {
       <Tab.Screen name={screens.KnowTheMan} component={KnowTheMan} />
       <Tab.Screen name={screens.Mission2047} component={Mission2047} />
       <Tab.Screen name={screens.SendFeedback} component={SendFeedback} />
+      <Tab.Screen name={screens.LoginPage} component={LoginPage} />
+      <Tab.Screen name={screens.ProfilePage} component={ProfilePage} />
       <Tab.Screen name={screens.ContactUs} component={ContactUs} />
 
       <Tab.Screen name={screens.MyRewardsStack} component={MyRewardsStackNavigator} />
