@@ -24,6 +24,21 @@ const products = [
     pName: 'Life Insurance',
     pImage:  require('../assets/LifeInsuranceIcon/LifeInsuranceIcon.png'),
   },
+  {
+    id: '2W_4W_Insurance_id',
+    pName: '2W/4W Insurance',
+    pImage:  require('../assets/WInsuranceIcon/WInsuranceIcon.png'),
+  },
+  {
+    id: 'Travel_Insurance_id',
+    pName: 'Travel Insurance',
+    pImage:  require('../assets/TravelInsuranceIcon/TravelInsuranceIcon.png'),
+  },
+  {
+    id: 'Property_Insurance_id',
+    pName: 'Property Insurance',
+    pImage:  require('../assets/PropertyInsuranceIcon/PropertyInsuranceIcon.png'),
+  },
 ];
 
 const SiddhiAssociates = ({

@@ -24,6 +24,21 @@ const products = [
     pName: 'Staysure',
     pImage: require('../assets/StaysureIcon/StaysureIcon.png'),
   },
+  {
+    id: 'Mamy_Poko_Pants_id',
+    pName: 'Mamy Poko Pants',
+    pImage: require('../assets/MamyPokoPantsIcon/MamyPokoPantsIcon.png'),
+  },
+  {
+    id: 'Lifree_id',
+    pName: 'Lifree',
+    pImage: require('../assets/LifreeIcon/LifreeIcon.png'),
+  },
+  {
+    id: 'Other_Product_id',
+    pName: 'Other',
+    pImage: require('../assets/OtherProductIcon/OtherProductIcon.png'),
+  },
 ];
 
 const RiddhiLady = ({

@@ -1,62 +1,34 @@
-import React, { createRef } from 'react'
+import React, { createRef, useEffect } from 'react'
 import { SafeAreaView, StatusBar, StyleSheet, View, Image,Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 
 import DrawerNavigator from './src/navigation/DrawerNavigator'
+import { WithSplashScreen } from './WithSplashScreen'
 
 const navigationRef = createRef()
 const nav = () => navigationRef.current
 
-class App extends React.Component {
-  constructor(){
-    super();  
-    this.state={  
-    isVisible : true,  
-   }  
- }  
-  Hide_Splash_Screen=()=>{  
-   this.setState({   
-     isVisible : false   
-   });  
- }  
- componentDidMount(){  
-  var that = this;  
-  setTimeout(function(){  
-    that.Hide_Splash_Screen();  
-  }, 5000);  
- }  
-  render() {
-    let Splash_Screen = (  
-      <View style={styles.SplashScreen_RootView}>  
-          <View style={styles.SplashScreen_ChildView}>  
-                <Image source={{uri:'https://static.javatpoint.com/tutorial/react-native/images/react-native-tutorial.png'}}  
-             style={{width:'100%', height: '100%', resizeMode: 'contain'}} />  
-         </View>  
-      </View> );
-       return(  
-             <View style = { styles.MainContainer }>
-              <Text>sdkfjskdjfksjdfskd fjsd fs dfjskdfjksjdfj</Text>
-                {/* <SafeAreaView style={styles.safeArea}>
-                  <StatusBar barStyle="dark-content" />
-                  <NavigationContainer ref={(nav) => nav}>
-                    <DrawerNavigator nav={nav} />
-                  </NavigationContainer>
-                </SafeAreaView> */}
-                {
-                  (this.state.isVisible === true) ? Splash_Screen : null
-                }  
-            </View>  
-              );  
-        
-    // return (
-    //   <SafeAreaView style={styles.safeArea}>
-    //     <StatusBar barStyle="dark-content" />
-    //     <NavigationContainer ref={navigationRef}>
-    //       <DrawerNavigator nav={nav} />
-    //     </NavigationContainer>
-    //   </SafeAreaView>
-    // )
-  }
+const App = () => {
+  const [isReady, setIsReady] = React.useState(false);
+
+  useEffect(() => {
+    async function initialize() {
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      setIsReady(true);
+    }
+
+    initialize();
+  }, []);
+  return (
+    <WithSplashScreen isAppReady={isReady}>
+      {isReady && <SafeAreaView style={styles.safeArea}>
+        <StatusBar barStyle="dark-content" />
+        <NavigationContainer ref={navigationRef}>
+          <DrawerNavigator nav={nav} />
+        </NavigationContainer>
+      </SafeAreaView>}
+    </WithSplashScreen>
+  );
 }
 
 const styles = StyleSheet.create({
