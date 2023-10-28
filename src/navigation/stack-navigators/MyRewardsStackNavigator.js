@@ -12,14 +12,4 @@ const MyRewards = () => (
   </View>
 )
 
-const MyRewardsStackNavigator = () => {
-  return (
-    <Stack.Navigator screenOptions={{
-      headerShown: false,
-    }}>
-      <Stack.Screen name={screens.MyRewards} component={MyRewards} />
-    </Stack.Navigator>
-  )
-}
-
 export default MyRewardsStackNavigator

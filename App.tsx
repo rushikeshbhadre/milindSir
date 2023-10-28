@@ -4,12 +4,14 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import DrawerNavigator from './src/navigation/DrawerNavigator'
 import { WithSplashScreen } from './WithSplashScreen'
+import LoginPage from './src/screens/LoginPage'
 
 const navigationRef = createRef()
 const nav = () => navigationRef.current
 
 const App = () => {
   const [isReady, setIsReady] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
 
   useEffect(() => {
     async function initialize() {
@@ -21,12 +23,15 @@ const App = () => {
   }, []);
   return (
     <WithSplashScreen isAppReady={isReady}>
-      {isReady && <SafeAreaView style={styles.safeArea}>
+      {isReady &&
+      isLoggedIn
+      ? (<SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="dark-content" />
         <NavigationContainer ref={navigationRef}>
           <DrawerNavigator nav={nav} />
         </NavigationContainer>
-      </SafeAreaView>}
+      </SafeAreaView>)
+      : <LoginPage /> }
     </WithSplashScreen>
   );
 }

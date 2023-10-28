@@ -5,7 +5,6 @@ import { Text, StyleSheet, View } from 'react-native'
 import HomeStackNavigator from './stack-navigators/HomeStackNavigator'
 import BookStackNavigator from './stack-navigators/BookStackNavigator'
 import ContactStackNavigator from './stack-navigators/ContactStackNavigator'
-import MyRewardsStackNavigator from './stack-navigators/MyRewardsStackNavigator'
 import LocationsStackNavigator from './stack-navigators/LocationsStackNavigator'
 import KnowTheMan from '../screens/KnowTheMan'
 import ContactUs from '../screens/ContactUs'
@@ -27,8 +26,10 @@ const tabOptions = ({ route }) => {
     return {
       tabBarButton: () => <View style={{ width: 0 }} />,
       headerShown: false,
-      tabBarStyle: styles.tabContainer,
       title: item.title,
+      tabBarStyle: !item.hideTab ? styles.tabContainer : {
+        display: "none"
+      },
     }
   }
 
@@ -41,7 +42,9 @@ const tabOptions = ({ route }) => {
     //   <Text style={styles.tabBarLabel}>{item.title || ''}</Text>
     // ),
     headerShown: false,
-    tabBarStyle: styles.tabContainer,
+    tabBarStyle: !item.hideTab ? styles.tabContainer : {
+      display: "none"
+    },
     title: item.title,
   }
 }
@@ -61,8 +64,6 @@ const BottomTabNavigator = () => {
       <Tab.Screen name={screens.LoginPage} component={LoginPage} />
       <Tab.Screen name={screens.ProfilePage} component={ProfilePage} />
       <Tab.Screen name={screens.ContactUs} component={ContactUs} />
-
-      <Tab.Screen name={screens.MyRewardsStack} component={MyRewardsStackNavigator} />
       <Tab.Screen name={screens.LocationsStack} component={LocationsStackNavigator} />
     </Tab.Navigator>
   )

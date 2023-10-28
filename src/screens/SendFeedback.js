@@ -1,17 +1,30 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Pressable, ScrollView, TextInput} from 'react-native';
-import MHeader from "../components/MHeader"
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Pressable,
+  ScrollView,
+  TextInput,
+} from 'react-native';
+import MHeader from '../components/MHeader';
 import MButton from '../components/MButton';
-import { blue } from 'react-native-reanimated';
+import {blue} from 'react-native-reanimated';
 // import MButton from "../components/MButton"
 
-const SendFeedback = ({
-    navigation,
-    }) => {
-      const [text, onChangeText] = React.useState('Useless Text');
-      const [number, onChangeNumber] = React.useState('');
-      return (<ScrollView style={{flex: 1, backgroundColor: "#FBEAFF"}} ref={ref => this.scrollViewRef = ref}>
-			<MHeader navigation={navigation} title={"Send Feedback"} />
+const SendFeedback = ({navigation}) => {
+  const [text, onChangeText] = React.useState('Useless Text');
+  const [number, onChangeNumber] = React.useState('');
+  return (
+    <ScrollView
+      style={{flex: 1, backgroundColor: '#FBEAFF'}}
+      ref={ref => (this.scrollViewRef = ref)}>
+      <MHeader
+        navigation={navigation}
+        title={'Send Feedback'}
+        isHeaderCenter={true}
+      />
       <View style={styles.sendFeedbackWrapper}>
         <Text style={[styles.text_16_500]}>
           What do you love about the app, or what service do you like?
@@ -24,10 +37,15 @@ const SendFeedback = ({
           numberOfLines={10}
           multiline={true}
         />
-        <MButton mbStyle={{marginTop: 22, width: '100%',}} btnText={'Send Feedback'} onPress={() => alert('Send Feedback')} />
-      </View>		
-	</ScrollView>)  
-    }
+        <MButton
+          mbStyle={{marginTop: 22, width: '100%'}}
+          btnText={'Send Feedback'}
+          onPress={() => alert('Send Feedback')}
+        />
+      </View>
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
   sendFeedbackWrapper: {
@@ -37,10 +55,10 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     // backgroundColor: "blue"
     display: 'flex',
-    flexDirection:'column',
+    flexDirection: 'column',
   },
   text_16_500: {
-    fontFamily: "Poppins",
+    fontFamily: 'Poppins',
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 24,
@@ -49,7 +67,7 @@ const styles = StyleSheet.create({
     color: '#1C1B1F',
   },
   text_14_500: {
-    fontFamily: "Poppins",
+    fontFamily: 'Poppins',
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
@@ -65,8 +83,8 @@ const styles = StyleSheet.create({
     height: 176,
     backgroundColor: '#F6F6F6',
     borderRadius: 30,
-    textAlignVertical: 'top'
+    textAlignVertical: 'top',
   },
-})
+});
 
 export default SendFeedback;

@@ -16,7 +16,6 @@ export const screens = {
   RiddhiLady: 'RiddhiLady',
   MvvStack: 'MvvStack', 
   MvvManch: 'MvvManch',
-  MyRewardsStack: 'MyRewardsStack',
   MyRewards: 'MyRewards',
   LocationsStack: 'LocationsStack',
   Locations: 'Locations',
@@ -42,7 +41,7 @@ export const routes = [
   {
     name: screens.HomeTab,
     focusedRoute: screens.HomeTab,
-    title: 'Home',
+    title: 'HOME',
     showInTab: false,
     showInDrawer: false,
     icon: (focused) => <Image style={styles.wh24} source={require('../assets/homeIcon/homeIcon.png')} />,
@@ -50,7 +49,7 @@ export const routes = [
   {
     name: screens.HomeStack,
     focusedRoute: screens.HomeStack,
-    title: 'Home',
+    title: 'HOME',
     showInTab: true,
     showInDrawer: true,
     icon: (focused) => <Image style={styles.wh24} source={require('../assets/homeIcon/homeIcon.png')} />,
@@ -138,16 +137,37 @@ export const routes = [
     title: 'KNOW THE MAN',
     showInTab: false,
     showInDrawer: true,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
-
+  {
+    name: screens.ProfilePage,
+    focusedRoute: screens.ProfilePage,
+    title: 'MY PROFILE',
+    showInTab: false,
+    showInDrawer: true,
+    hideTab: true,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
+  {
+    name: screens.Mission2047,
+    focusedRoute: screens.Mission2047,
+    title: 'MY DREAM PROJECT',
+    showInTab: false,
+    showInDrawer: true,
+    hideTab: true,
+    icon: (focused) =>
+      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
+  },
   {
     name: screens.ContactStack,
     focusedRoute: screens.ContactStack,
     title: 'Contact Us',
     showInTab: false,
     showInDrawer: false,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="phone" size={30} color={focused ? '#551E18' : '#000'} />,
   },
@@ -157,18 +177,9 @@ export const routes = [
     title: 'Contact Us',
     showInTab: false,
     showInDrawer: false,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="phone" size={30} color={focused ? '#551E18' : '#000'} />,
-  },
-
-  {
-    name: screens.MyRewardsStack,
-    focusedRoute: screens.MyRewardsStack,
-    title: 'My Rewards',
-    showInTab: false,
-    showInDrawer: true,
-    icon: (focused) =>
-      <Icon name="star" size={30} color={focused ? '#551E18' : '#000'} />,
   },
   {
     name: screens.ContactUs,
@@ -176,15 +187,17 @@ export const routes = [
     title: 'CONTACT US',
     showInTab: false,
     showInDrawer: true,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
   {
     name: screens.SendFeedback,
     focusedRoute: screens.SendFeedback,
-    title: 'Feedback',
+    title: 'FEEDBACK',
     showInTab: false,
     showInDrawer: true,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
@@ -194,28 +207,10 @@ export const routes = [
     title: 'Login page',
     showInTab: false,
     showInDrawer: true,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
-  {
-    name: screens.ProfilePage,
-    focusedRoute: screens.ProfilePage,
-    title: 'Profile',
-    showInTab: false,
-    showInDrawer: true,
-    icon: (focused) =>
-      <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
-  },
-  {
-    name: screens.MyRewards,
-    focusedRoute: screens.MyRewardsStack,
-    title: 'My Rewards',
-    showInTab: false,
-    showInDrawer: false,
-    icon: (focused) =>
-      <Icon name="star" size={30} color={focused ? '#551E18' : '#000'} />,
-  },
-
   {
     name: screens.LocationsStack,
     focusedRoute: screens.LocationsStack,
@@ -235,11 +230,12 @@ export const routes = [
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },
   {
-    name: screens.Mission2047,
-    focusedRoute: screens.Mission2047,
-    title: 'MISSION 2047',
+    name: screens.EducationQualification,
+    focusedRoute: screens.EducationQualification,
+    title: 'Education Qualification',
     showInTab: false,
     showInDrawer: true,
+    hideTab: true,
     icon: (focused) =>
       <Icon name="map-marker" size={30} color={focused ? '#551E18' : '#000'} />,
   },

@@ -1,13 +1,30 @@
-
-import {View, Text, Image, StyleSheet, Pressable, ScrollView} from 'react-native'
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Pressable,
+  ScrollView,
+} from 'react-native';
 
 const rightIcon = require('../assets/backIcon/backIcon.png');
-const MHeader = ({navigation, title}) => (<View style={styles.headerWrapper}>
-  <Pressable onPress={() => navigation.goBack()}>
-    <Image style={styles.wh24} source={rightIcon} />
-  </Pressable>
-  <Text style={styles.headerText}>{title}</Text>
-</View>)
+const MHeader = ({navigation, title, isHeaderCenter}) => (
+  <View style={styles.headerWrapper}>
+    <Pressable onPress={() => navigation.goBack()}>
+      <Image style={styles.wh24} source={rightIcon} />
+    </Pressable>
+    <Text
+      style={[
+        styles.headerText,
+        {
+          textAlign: !isHeaderCenter ? 'left' : 'center',
+          flex: 1,
+        },
+      ]}>
+      {title}
+    </Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   wh24: {
@@ -20,19 +37,20 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     paddingLeft: 25,
+    paddingRight: 48,
     paddingTop: 22,
     paddingBottom: 24,
   },
   headerText: {
-    fontFamily: "Poppins",
+    fontFamily: 'Poppins',
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: '600',
     lineHeight: 30,
     letterSpacing: 0,
-    textAlign: "center",
-    color: "#4D1048",
-    paddingLeft: 17
-  }
+    textAlign: 'center',
+    color: '#4D1048',
+    paddingLeft: 17,
+  },
 });
 
 export default MHeader;
